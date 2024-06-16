@@ -1,0 +1,35 @@
+const Mail = ("DevBak@gmail.com")
+describe('template spec', () => {
+  it('LogIn', () => {
+    cy.visit('https://wozere-bugged.jarrus.top/')
+    cy.get('.css-1z05u07').click()
+    cy.get('input[name="email"]').type(Mail)
+    cy.get('input[name="password"]').type('DevakTest!')
+    cy.get('input[name="rememberMe"').check()
+    cy.get('form').submit()
+  })
+
+  it('Forget password? Email', () => {
+    cy.viewport(1280, 720)
+    cy.visit('https://wozere-bugged.jarrus.top/')
+    cy.get('.css-1z05u07').click()
+    cy.get('[style="font-size: 14px; line-height: 20px; color: rgb(13, 153, 255); cursor: pointer;"]').click()
+    cy.get('input[name="email"]').type(Mail)
+    cy.get('input[name="termsOfUseAgree"').check()
+    cy.get('input[name="rememberMe"').check()
+    cy.get('.css-6h9o1l > .MuiButton-contained')
+  })
+
+  it('SignUp', () => {
+    cy.viewport(1280, 720)
+    cy.visit('https://wozere-bugged.jarrus.top/')
+    cy.get('.css-1z05u07').click()
+    cy.get('[style="font-size: 14px; line-height: 20px; color: rgb(13, 153, 255); cursor: pointer;"]').click()
+    cy.get('.css-1b7ejq0').contains("Sign Up")
+    cy.get('.css-oosy90').contains("We are very happy to see you!")
+    cy.get('input[name="email"]').type(Mail)
+    cy.get('input[name="termsOfUseAgree"').check()
+    cy.get('input[name="rememberMe"').check()
+    cy.get('.css-6h9o1l > .MuiButton-contained').click()
+  })
+})
